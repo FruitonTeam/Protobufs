@@ -10,7 +10,7 @@ import "chat.proto";
 message WrapperMessage {
 
     oneof msg {
-        ChatMsg chatMsg = 1;
+        ChatMessage chatMessage = 1;
         SaladInfo salad = 2;
     }
 
