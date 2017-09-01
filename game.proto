@@ -28,4 +28,17 @@ message SaladInfo {
 
 }
 
+message FruitonTeam {
+
+	string name = 1;
+	repeated int32 fruitonIDs = 2;
+
+}
+
+message FruitonTeamList {
+	
+	repeated FruitonTeam fruitonTeams = 1;
+	
+}
+
 
