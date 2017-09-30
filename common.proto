@@ -20,6 +20,7 @@ message WrapperMessage {
         GameOver gameOver = 7;
         GameResults gameResults = 8;
         CancelFindingGame cancelFindingGame = 9;
+        ReturnedToMatchMakingQueue returnedToMatchMakingQueue = 10;
     }
 
 }
