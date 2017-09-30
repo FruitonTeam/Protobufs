@@ -15,6 +15,10 @@ message CancelFindingGame {
 
 }
 
+message ReturnedToMatchMakingQueue {
+
+}
+
 message GameReady {
 
     string opponentId = 1;
