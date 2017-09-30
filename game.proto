@@ -7,6 +7,8 @@ option java_outer_classname = "GameProtos";
 
 message FindGame { // when player wants to start playing online
 
+    FruitonTeam team = 1;
+
 }
 
 message GameReady {
@@ -16,13 +18,36 @@ message GameReady {
 
 }
 
+message PlayerReady {
+
+}
+
 message Action {
+
+    int32 id = 1;
+    Position from = 2;
+    Position to = 3;
+
+}
+
+message Position {
+
+    int32 x = 1;
+    int32 y = 2;
 
 }
 
 message GameOver {
 
     int32 reason = 1; // ordinary game over, opponent disconnected, etc.
+    GameResults results = 2;
+
+}
+
+message GameResults {
+
+    int32 xpGain = 1;
+    repeated int32 completedQuests = 2;
 
 }
 
