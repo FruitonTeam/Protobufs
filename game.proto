@@ -11,10 +11,15 @@ message FindGame { // when player wants to start playing online
 
 }
 
+message CancelFindingGame {
+
+}
+
 message GameReady {
 
     string opponentId = 1;
-    bool startsFirst = 2; // whether player who received this message starts first
+    FruitonTeam opponentTeam = 2;
+    bool startsFirst = 3; // whether player who received this message starts first
 
 }
 

@@ -19,6 +19,7 @@ message WrapperMessage {
         Action action = 6;
         GameOver gameOver = 7;
         GameResults gameResults = 8;
+        CancelFindingGame cancelFindingGame = 9;
     }
 
 }
