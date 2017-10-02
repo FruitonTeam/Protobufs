@@ -15,15 +15,15 @@ message CancelFindingGame {
 
 }
 
-message ReturnedToMatchMakingQueue {
-
-}
-
 message GameReady {
 
     string opponentId = 1;
     FruitonTeam opponentTeam = 2;
     bool startsFirst = 3; // whether player who received this message starts first
+
+}
+
+message GameStarts {
 
 }
 
@@ -70,6 +70,7 @@ message FruitonTeam {
 
     string name = 1;
     repeated int32 fruitonIDs = 2;
+    repeated Position positions = 3;
 
 }
 
