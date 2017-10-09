@@ -17,7 +17,7 @@ message CancelFindingGame {
 
 message GameReady {
 
-    string opponentId = 1;
+    PlayerInfo opponent = 1;
     FruitonTeam opponentTeam = 2;
     bool startsFirst = 3; // whether player who received this message starts first
 
@@ -57,6 +57,14 @@ message GameResults {
 
     int32 xpGain = 1;
     repeated int32 completedQuests = 2;
+
+}
+
+message PlayerInfo {
+
+    string login = 1;
+    string avatar = 2; // base64 encoded image or empty for default
+    int32 rating = 3;
 
 }
 
