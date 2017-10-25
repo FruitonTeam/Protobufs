@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package cz.cuni.mff.fruiton.dto;
+
+option java_package = "cz.cuni.mff.fruiton.dto";
+option java_outer_classname = "CommonProtos";
+
+import "chat.proto";
+import "game.proto";
+
+message WrapperMessage {
+
+    oneof message {
+        ChatMessage chatMessage = 1;
+        ErrorMessage errorMessage = 2;
+        FindGame findGame = 3;
+        GameReady gameReady = 4;
+        PlayerReady playerReady = 5;
+        Action action = 6;
+        GameOver gameOver = 7;
+        GameResults gameResults = 8;
+        CancelFindingGame cancelFindingGame = 9;
+        GameStarts gameStarts = 10;
+    }
+
+}
+
+message ErrorMessage {
+
+    string message = 1;
+
+}

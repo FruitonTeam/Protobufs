@@ -5,9 +5,10 @@ package cz.cuni.mff.fruiton.dto;
 option java_package = "cz.cuni.mff.fruiton.dto";
 option java_outer_classname = "ChatProtos";
 
-message ChatMsg {
+message ChatMessage {
 
     string recipient = 1;
-    string msg = 2;
+    string sender = 2;
+    string message = 3;
 
 }

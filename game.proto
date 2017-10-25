@@ -5,14 +5,66 @@ package cz.cuni.mff.fruiton.dto;
 option java_package = "cz.cuni.mff.fruiton.dto";
 option java_outer_classname = "GameProtos";
 
-import "chat.proto";
+message FindGame { // when player wants to start playing online
 
-message WrapperMessage {
+    FruitonTeam team = 1;
 
-    oneof msg {
-        ChatMsg chatMsg = 1;
-        SaladInfo salad = 2;
-    }
+}
+
+message CancelFindingGame {
+
+}
+
+message GameReady {
+
+    PlayerInfo opponent = 1;
+    FruitonTeam opponentTeam = 2;
+    bool startsFirst = 3; // whether player who received this message starts first
+
+}
+
+message GameStarts {
+
+}
+
+message PlayerReady {
+
+}
+
+message Action {
+
+    int32 id = 1;
+    Position from = 2;
+    Position to = 3;
+
+}
+
+message Position {
+
+    int32 x = 1;
+    int32 y = 2;
+
+}
+
+message GameOver {
+
+    int32 reason = 1; // ordinary game over, opponent disconnected, etc.
+    GameResults results = 2;
+
+}
+
+message GameResults {
+
+    int32 xpGain = 1;
+    repeated int32 completedQuests = 2;
+
+}
+
+message PlayerInfo {
+
+    string login = 1;
+    string avatar = 2; // base64 encoded image or empty for default
+    int32 rating = 3;
 
 }
 
@@ -22,9 +74,17 @@ message Fruiton {
 
 }
 
-message SaladInfo {
+message FruitonTeam {
 
-    repeated Fruiton salad = 1;
+    string name = 1;
+    repeated int32 fruitonIDs = 2;
+    repeated Position positions = 3;
+
+}
+
+message FruitonTeamList {
+
+    repeated FruitonTeam fruitonTeams = 1;
 
 }
 
