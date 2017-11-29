@@ -47,8 +47,12 @@ message Position {
 }
 
 message GameOver {
-
-    int32 reason = 1; // ordinary game over, opponent disconnected, etc.
+    enum Reason {
+        STANDARD = 0;
+        DISCONNECT = 1;
+        SURRENDER = 2;
+    }
+    Reason reason = 1;
     GameResults results = 2;
 
 }
