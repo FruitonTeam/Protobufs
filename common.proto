@@ -22,6 +22,7 @@ message WrapperMessage {
         CancelFindingGame cancelFindingGame = 9;
         GameStarts gameStarts = 10;
         Notification notification = 11;
+        Surrender surrender = 12;
     }
 
 }

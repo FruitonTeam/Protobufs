@@ -53,6 +53,10 @@ message GameOver {
 
 }
 
+message Surrender {
+
+}
+
 message GameResults {
 
     int32 xpGain = 1;
