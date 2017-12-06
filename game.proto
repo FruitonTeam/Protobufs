@@ -107,23 +107,17 @@ message FruitonTeamList {
 
 message Quest {
 
-    string name = 2;
-    string description = 3;
-    string image = 4;
-    int32 goal = 5;
+    string name = 1;
+    string description = 2;
+    string image = 3;
+    int32 goal = 4;
+    int32 progress = 5;
     QuestReward reward = 6;
-    QuestProgress progress = 7;
 
 }
 
 message QuestReward {
 
     int32 money = 1;
-
-}
-
-message QuestProgress {
-
-    int32 progress = 3;
 
 }
