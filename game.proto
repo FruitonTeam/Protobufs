@@ -105,6 +105,7 @@ message Quest {
     string image = 4;
     int32 goal = 5;
     QuestReward reward = 6;
+    QuestProgress progress = 7;
 
 }
 
@@ -116,8 +117,7 @@ message QuestReward {
 
 message QuestProgress {
 
-    string id = 1;
-    string questId = 2;
+    string id = 2;
     int32 progress = 3;
 
 }
