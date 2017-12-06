@@ -64,7 +64,16 @@ message Surrender {
 message GameResults {
 
     int32 xpGain = 1;
-    repeated int32 completedQuests = 2;
+    repeated Quest quests = 2;
+
+}
+
+message LoggedPlayerInfo {
+
+    string login = 1;
+    string avatar = 2; // base64 encoded image or empty for default
+    int32 rating = 3;
+    repeated Quest quests = 4;
 
 }
 
@@ -96,4 +105,19 @@ message FruitonTeamList {
 
 }
 
+message Quest {
 
+    string name = 1;
+    string description = 2;
+    string image = 3;
+    int32 goal = 4;
+    int32 progress = 5;
+    QuestReward reward = 6;
+
+}
+
+message QuestReward {
+
+    int32 money = 1;
+
+}
