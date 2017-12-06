@@ -74,6 +74,7 @@ message LoggedPlayerInfo {
     string avatar = 2; // base64 encoded image or empty for default
     int32 rating = 3;
     repeated Quest quests = 4;
+    int32 money = 5;
 
 }
 
