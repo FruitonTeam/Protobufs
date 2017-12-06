@@ -23,6 +23,7 @@ message WrapperMessage {
         GameStarts gameStarts = 10;
         Notification notification = 11;
         Surrender surrender = 12;
+        LoggedPlayerInfo loggedPlayerInfo = 13;
     }
 
 }
