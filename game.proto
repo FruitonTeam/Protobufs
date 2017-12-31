@@ -122,3 +122,15 @@ message QuestReward {
     int32 money = 1;
 
 }
+
+message PlayersOnSameNetworkOnline {
+
+    repeated string logins = 1;
+
+}
+
+message PlayerOnSameNetworkOffline {
+
+    string login = 1;
+
+}
