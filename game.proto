@@ -63,8 +63,9 @@ message Surrender {
 
 message GameResults {
 
-    int32 xpGain = 1;
+    int32 money = 1;
     repeated Quest quests = 2;
+    repeated int32 unlockedFruitons = 3;
 
 }
 
