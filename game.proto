@@ -20,6 +20,7 @@ message GameReady {
     PlayerInfo opponent = 1;
     FruitonTeam opponentTeam = 2;
     bool startsFirst = 3; // whether player who received this message starts first
+    int32 mapId = 4;
 
 }
 
@@ -47,6 +48,7 @@ message Position {
 }
 
 message GameOver {
+
     enum Reason {
         STANDARD = 0;
         DISCONNECT = 1;
