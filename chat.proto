@@ -12,3 +12,16 @@ message ChatMessage {
     string message = 3;
 
 }
+
+message FriendRequest {
+
+    string friendToAdd = 1;
+
+}
+
+message FriendRequestResult {
+
+    string friendToAdd = 1;
+    bool friendshipAccepted = 2;
+
+}
