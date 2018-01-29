@@ -7,7 +7,13 @@ option java_outer_classname = "GameProtos";
 
 message FindGame { // when player wants to start playing online
 
+    enum GameMode {
+        STANDARD = 0;
+        LAST_MAN_STANDING = 1;
+    }
+
     FruitonTeam team = 1;
+    GameMode gameMode = 2;
 
 }
 
