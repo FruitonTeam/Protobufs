@@ -26,6 +26,9 @@ message WrapperMessage {
         LoggedPlayerInfo loggedPlayerInfo = 13;
         PlayersOnSameNetworkOnline playersOnSameNetworkOnline = 14;
         PlayerOnSameNetworkOffline playerOnSameNetworkOffline = 15;
+        FriendRequest friendRequest = 16;
+        FriendRequestResult friendRequestResult = 17;
+        OnlineStatusChange onlineStatusChange = 18;
     }
 
 }

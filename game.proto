@@ -78,6 +78,7 @@ message LoggedPlayerInfo {
     int32 rating = 3;
     repeated Quest quests = 4;
     int32 money = 5;
+    repeated Friend friendList = 6;
 
 }
 
@@ -135,5 +136,24 @@ message PlayersOnSameNetworkOnline {
 message PlayerOnSameNetworkOffline {
 
     string login = 1;
+
+}
+
+enum Status {
+    OFFLINE = 0;
+    ONLINE = 1;
+}
+
+message Friend {
+
+    string login = 1;
+    Status status = 2;
+
+}
+
+message OnlineStatusChange {
+
+    string login = 1;
+    Status status = 2;
 
 }
