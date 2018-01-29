@@ -29,6 +29,7 @@ message WrapperMessage {
         FriendRequest friendRequest = 16;
         FriendRequestResult friendRequestResult = 17;
         OnlineStatusChange onlineStatusChange = 18;
+        Timeout timeout = 19;
     }
 
 }
