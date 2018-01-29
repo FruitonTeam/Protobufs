@@ -157,3 +157,7 @@ message OnlineStatusChange {
     Status status = 2;
 
 }
+
+message Timeout {
+
+}
