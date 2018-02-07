@@ -7,9 +7,17 @@ option java_outer_classname = "ChatProtos";
 
 message ChatMessage {
 
-    string recipient = 1;
-    string sender = 2;
-    string message = 3;
+    string id = 1;
+    string recipient = 2;
+    string sender = 3;
+    string message = 4;
+    string timestamp = 5;
+
+}
+
+message ChatMessages {
+
+    repeated ChatMessage messages = 1;
 
 }
 
