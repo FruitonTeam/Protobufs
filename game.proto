@@ -85,6 +85,7 @@ message LoggedPlayerInfo {
     repeated Quest quests = 4;
     int32 money = 5;
     repeated Friend friendList = 6;
+    Fraction fraction = 7;
 
 }
 
@@ -165,5 +166,20 @@ message OnlineStatusChange {
 }
 
 message Timeout {
+
+}
+
+enum Fraction {
+
+    NONE = 0;
+    GUACAMOLE_GUERILLAS = 1;
+    CRANBERRY_CRUSADE = 2;
+    TZATZIKI_TSARDOM = 3;
+
+}
+
+message SetFraction {
+
+    Fraction fraction = 1;
 
 }
