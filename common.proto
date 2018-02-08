@@ -30,6 +30,7 @@ message WrapperMessage {
         FriendRequestResult friendRequestResult = 17;
         OnlineStatusChange onlineStatusChange = 18;
         Timeout timeout = 19;
+        SetFraction setFraction = 20;
     }
 
 }
