@@ -31,6 +31,9 @@ message WrapperMessage {
         OnlineStatusChange onlineStatusChange = 18;
         Timeout timeout = 19;
         SetFraction setFraction = 20;
+        Challenge challenge = 21;
+        ChallengeResult challengeResult = 22;
+        RevokeChallenge revokeChallenge = 23;
     }
 
 }

@@ -5,12 +5,14 @@ package cz.cuni.mff.fruiton.dto;
 option java_package = "cz.cuni.mff.fruiton.dto";
 option java_outer_classname = "GameProtos";
 
-message FindGame { // when player wants to start playing online
+enum GameMode {
 
-    enum GameMode {
-        STANDARD = 0;
-        LAST_MAN_STANDING = 1;
-    }
+    STANDARD = 0;
+    LAST_MAN_STANDING = 1;
+
+}
+
+message FindGame { // when player wants to start playing online
 
     FruitonTeam team = 1;
     GameMode gameMode = 2;
@@ -181,5 +183,27 @@ enum Fraction {
 message SetFraction {
 
     Fraction fraction = 1;
+
+}
+
+message Challenge {
+
+    string challengeFor = 1;
+    GameMode mode = 2;
+    FruitonTeam team = 3;
+
+}
+
+message ChallengeResult {
+
+    string challengeFrom = 1;
+    bool challengeAccepted = 2;
+    FruitonTeam team = 3;
+
+}
+
+message RevokeChallenge {
+
+    string challengeFrom = 1;
 
 }
