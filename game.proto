@@ -12,10 +12,18 @@ enum GameMode {
 
 }
 
+enum PickMode {
+
+    STANDARD_PICK = 0; // every enum value must be unique and STANDARD is already in GameMode
+    DRAFT = 1;
+
+}
+
 message FindGame { // when player wants to start playing online
 
     FruitonTeam team = 1;
     GameMode gameMode = 2;
+    PickMode pickMode = 3;
 
 }
 
@@ -205,5 +213,41 @@ message ChallengeResult {
 message RevokeChallenge {
 
     string challengeFrom = 1;
+
+}
+
+message DraftReady {
+
+    PlayerInfo opponent = 1;
+    bool startsFirst = 2; // whether player who received this message starts first
+
+}
+
+enum FruitonType {
+
+    KING = 0;
+    MAJOR = 1;
+    MINOR = 2;
+
+}
+
+message DraftRequest {
+
+    Position position = 1;
+    FruitonType fruitonType = 2;
+
+}
+
+message DraftResponse {
+
+    int32 fruitonId = 1;
+
+}
+
+message DraftResult {
+
+    string login = 1;
+    Position position = 2;
+    int32 fruitonId = 3;
 
 }
