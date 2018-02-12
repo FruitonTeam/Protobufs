@@ -34,6 +34,10 @@ message WrapperMessage {
         Challenge challenge = 21;
         ChallengeResult challengeResult = 22;
         RevokeChallenge revokeChallenge = 23;
+        DraftReady draftReady = 24;
+        DraftRequest draftRequest = 25;
+        DraftResponse draftResponse = 26;
+        DraftResult draftResult = 27;
     }
 
 }
