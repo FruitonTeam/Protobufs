@@ -38,6 +38,7 @@ message WrapperMessage {
         DraftRequest draftRequest = 25;
         DraftResponse draftResponse = 26;
         DraftResult draftResult = 27;
+        DraftSurrenderMessage draftSurrenderMessage = 28;
     }
 
 }
