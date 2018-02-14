@@ -252,3 +252,7 @@ message DraftResult {
     int32 fruitonId = 3;
 
 }
+
+message DraftSurrenderMessage {
+
+}
