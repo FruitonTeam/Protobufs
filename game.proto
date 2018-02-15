@@ -256,3 +256,9 @@ message DraftResult {
 message DraftSurrenderMessage {
 
 }
+
+message StateCorrection {
+
+    string gameState = 1;
+
+}
