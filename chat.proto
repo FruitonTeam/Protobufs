@@ -11,7 +11,7 @@ message ChatMessage {
     string recipient = 2;
     string sender = 3;
     string message = 4;
-    int64 timestamp = 5;
+    string timestamp = 5;
 
 }
 
