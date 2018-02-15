@@ -39,6 +39,7 @@ message WrapperMessage {
         DraftResponse draftResponse = 26;
         DraftResult draftResult = 27;
         DraftSurrenderMessage draftSurrenderMessage = 28;
+        StateCorrection stateCorrection = 29;
     }
 
 }
