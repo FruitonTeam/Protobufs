@@ -197,8 +197,10 @@ message SetFraction {
 message Challenge {
 
     string challengeFor = 1;
-    GameMode mode = 2;
-    FruitonTeam team = 3;
+    string challengeFrom = 2;
+    GameMode gameMode = 3;
+    PickMode pickMode = 4;
+    FruitonTeam team = 5;
 
 }
 
