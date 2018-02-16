@@ -28,7 +28,7 @@ message WrapperMessage {
         PlayerOnSameNetworkOffline playerOnSameNetworkOffline = 15;
         FriendRequest friendRequest = 16;
         FriendRequestResult friendRequestResult = 17;
-        OnlineStatusChange onlineStatusChange = 18;
+        StatusChange statusChange = 18;
         Timeout timeout = 19;
         SetFraction setFraction = 20;
         Challenge challenge = 21;
