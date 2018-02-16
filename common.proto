@@ -40,6 +40,7 @@ message WrapperMessage {
         DraftResult draftResult = 27;
         DraftSurrenderMessage draftSurrenderMessage = 28;
         StateCorrection stateCorrection = 29;
+        FriendRemoval friendRemoval = 30;
     }
 
 }
