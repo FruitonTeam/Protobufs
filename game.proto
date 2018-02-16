@@ -159,6 +159,9 @@ message PlayerOnSameNetworkOffline {
 enum Status {
     OFFLINE = 0;
     ONLINE = 1;
+    MAIN_MENU = 2;
+    IN_MATCHMAKING = 3;
+    IN_BATTLE = 4;
 }
 
 message Friend {
@@ -168,7 +171,7 @@ message Friend {
 
 }
 
-message OnlineStatusChange {
+message StatusChange {
 
     string login = 1;
     Status status = 2;
