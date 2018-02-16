@@ -33,3 +33,9 @@ message FriendRequestResult {
     bool friendshipAccepted = 2;
 
 }
+
+message FriendRemoval {
+
+    string login = 1;
+
+}
