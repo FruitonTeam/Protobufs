@@ -7,6 +7,7 @@ option java_outer_classname = "CommonProtos";
 
 import "chat.proto";
 import "game.proto";
+import "bazaar.proto";
 
 message WrapperMessage {
 
@@ -41,6 +42,9 @@ message WrapperMessage {
         DraftSurrenderMessage draftSurrenderMessage = 28;
         StateCorrection stateCorrection = 29;
         FriendRemoval friendRemoval = 30;
+        TradeOffer tradeOffer = 31;
+        BazaarOfferResult bazaarOfferResult = 32;
+        BazaarOfferResolvedOnTheWeb bazaarOfferResolvedOnTheWeb = 33;
     }
 
 }
@@ -51,6 +55,7 @@ message ErrorMessage {
         GENERAL = 0;
         INVALID_TEAM = 1;
         USE_OF_NOT_UNLOCKED_FRUITON = 2;
+        TRADE_OFFER_ERROR = 3;
     }
 
     string message = 1;
