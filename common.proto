@@ -18,7 +18,7 @@ message WrapperMessage {
         PlayerReady playerReady = 5;
         Action action = 6;
         GameOver gameOver = 7;
-        GameResults gameResults = 8;
+        GameRewards gameRewards = 8;
         CancelFindingGame cancelFindingGame = 9;
         GameStarts gameStarts = 10;
         Notification notification = 11;

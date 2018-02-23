@@ -71,7 +71,7 @@ message GameOver {
         SURRENDER = 2;
     }
     Reason reason = 1;
-    GameRewards rewards = 2;
+    GameRewards gameRewards = 2;
     string winnerLogin = 3;
 
 }
