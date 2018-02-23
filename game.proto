@@ -71,7 +71,7 @@ message GameOver {
         SURRENDER = 2;
     }
     Reason reason = 1;
-    GameResults results = 2;
+    GameRewards rewards = 2;
     string winnerLogin = 3;
 
 }
@@ -80,7 +80,7 @@ message Surrender {
 
 }
 
-message GameResults {
+message GameRewards {
 
     int32 money = 1;
     repeated Quest quests = 2;
