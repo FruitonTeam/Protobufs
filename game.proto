@@ -72,6 +72,7 @@ message GameOver {
     }
     Reason reason = 1;
     GameResults results = 2;
+    string winnerLogin = 3;
 
 }
 
