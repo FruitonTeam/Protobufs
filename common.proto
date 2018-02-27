@@ -45,6 +45,7 @@ message WrapperMessage {
         TradeOffer tradeOffer = 31;
         BazaarOfferResult bazaarOfferResult = 32;
         BazaarOfferResolvedOnTheWeb bazaarOfferResolvedOnTheWeb = 33;
+        Disconnected disconnected = 34;
     }
 
 }
@@ -68,5 +69,9 @@ message Notification {
     string image = 1; // base64 encoded image or empty for default
     string title = 2;
     string text = 3;
+
+}
+
+message Disconnected {
 
 }
