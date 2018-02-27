@@ -17,9 +17,3 @@ message LoginData {
     string password = 2;
 
 }
-
-message LoginGoogle {
-
-    string token = 1;
-
-}

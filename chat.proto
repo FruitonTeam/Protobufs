@@ -7,8 +7,35 @@ option java_outer_classname = "ChatProtos";
 
 message ChatMessage {
 
-    string recipient = 1;
-    string sender = 2;
-    string message = 3;
+    string id = 1;
+    string recipient = 2;
+    string sender = 3;
+    string message = 4;
+    int64 timestamp = 5;
+
+}
+
+message ChatMessages {
+
+    repeated ChatMessage messages = 1;
+
+}
+
+message FriendRequest {
+
+    string friendToAdd = 1;
+
+}
+
+message FriendRequestResult {
+
+    string friendToAdd = 1;
+    bool friendshipAccepted = 2;
+
+}
+
+message FriendRemoval {
+
+    string login = 1;
 
 }

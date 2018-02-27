@@ -7,6 +7,7 @@ option java_outer_classname = "CommonProtos";
 
 import "chat.proto";
 import "game.proto";
+import "bazaar.proto";
 
 message WrapperMessage {
 
@@ -18,15 +19,54 @@ message WrapperMessage {
         PlayerReady playerReady = 5;
         Action action = 6;
         GameOver gameOver = 7;
-        GameResults gameResults = 8;
+        GameRewards gameRewards = 8;
         CancelFindingGame cancelFindingGame = 9;
         GameStarts gameStarts = 10;
+        Notification notification = 11;
+        Surrender surrender = 12;
+        LoggedPlayerInfo loggedPlayerInfo = 13;
+        PlayersOnSameNetworkOnline playersOnSameNetworkOnline = 14;
+        PlayerOnSameNetworkOffline playerOnSameNetworkOffline = 15;
+        FriendRequest friendRequest = 16;
+        FriendRequestResult friendRequestResult = 17;
+        StatusChange statusChange = 18;
+        Timeout timeout = 19;
+        SetFraction setFraction = 20;
+        Challenge challenge = 21;
+        ChallengeResult challengeResult = 22;
+        RevokeChallenge revokeChallenge = 23;
+        DraftReady draftReady = 24;
+        DraftRequest draftRequest = 25;
+        DraftResponse draftResponse = 26;
+        DraftResult draftResult = 27;
+        DraftSurrenderMessage draftSurrenderMessage = 28;
+        StateCorrection stateCorrection = 29;
+        FriendRemoval friendRemoval = 30;
+        TradeOffer tradeOffer = 31;
+        BazaarOfferResult bazaarOfferResult = 32;
+        BazaarOfferResolvedOnTheWeb bazaarOfferResolvedOnTheWeb = 33;
     }
 
 }
 
 message ErrorMessage {
 
+    enum ErrorId {
+        GENERAL = 0;
+        INVALID_TEAM = 1;
+        USE_OF_NOT_UNLOCKED_FRUITON = 2;
+        TRADE_OFFER_ERROR = 3;
+    }
+
     string message = 1;
+    ErrorId errorId = 2;
+
+}
+
+message Notification {
+
+    string image = 1; // base64 encoded image or empty for default
+    string title = 2;
+    string text = 3;
 
 }

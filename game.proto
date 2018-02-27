@@ -5,9 +5,25 @@ package cz.cuni.mff.fruiton.dto;
 option java_package = "cz.cuni.mff.fruiton.dto";
 option java_outer_classname = "GameProtos";
 
+enum GameMode {
+
+    STANDARD = 0;
+    LAST_MAN_STANDING = 1;
+
+}
+
+enum PickMode {
+
+    STANDARD_PICK = 0; // every enum value must be unique and STANDARD is already in GameMode
+    DRAFT = 1;
+
+}
+
 message FindGame { // when player wants to start playing online
 
     FruitonTeam team = 1;
+    GameMode gameMode = 2;
+    PickMode pickMode = 3;
 
 }
 
@@ -20,6 +36,7 @@ message GameReady {
     PlayerInfo opponent = 1;
     FruitonTeam opponentTeam = 2;
     bool startsFirst = 3; // whether player who received this message starts first
+    int32 mapId = 4;
 
 }
 
@@ -48,15 +65,38 @@ message Position {
 
 message GameOver {
 
-    int32 reason = 1; // ordinary game over, opponent disconnected, etc.
-    GameResults results = 2;
+    enum Reason {
+        STANDARD = 0;
+        DISCONNECT = 1;
+        SURRENDER = 2;
+    }
+    Reason reason = 1;
+    GameRewards gameRewards = 2;
+    string winnerLogin = 3;
 
 }
 
-message GameResults {
+message Surrender {
 
-    int32 xpGain = 1;
-    repeated int32 completedQuests = 2;
+}
+
+message GameRewards {
+
+    int32 money = 1;
+    repeated Quest quests = 2;
+    repeated int32 unlockedFruitons = 3;
+
+}
+
+message LoggedPlayerInfo {
+
+    string login = 1;
+    string avatar = 2; // base64 encoded image or empty for default
+    int32 rating = 3;
+    repeated Quest quests = 4;
+    int32 money = 5;
+    repeated Friend friendList = 6;
+    Fraction fraction = 7;
 
 }
 
@@ -88,4 +128,142 @@ message FruitonTeamList {
 
 }
 
+message Quest {
 
+    string name = 1;
+    string description = 2;
+    string image = 3;
+    int32 goal = 4;
+    int32 progress = 5;
+    QuestReward reward = 6;
+
+}
+
+message QuestReward {
+
+    int32 money = 1;
+
+}
+
+message PlayersOnSameNetworkOnline {
+
+    repeated string logins = 1;
+
+}
+
+message PlayerOnSameNetworkOffline {
+
+    string login = 1;
+
+}
+
+enum Status {
+    OFFLINE = 0;
+    MAIN_MENU = 1;
+    IN_MATCHMAKING = 2;
+    IN_BATTLE = 3;
+}
+
+message Friend {
+
+    string login = 1;
+    Status status = 2;
+
+}
+
+message StatusChange {
+
+    string login = 1;
+    Status status = 2;
+
+}
+
+message Timeout {
+
+}
+
+enum Fraction {
+
+    NONE = 0;
+    GUACAMOLE_GUERILLAS = 1;
+    CRANBERRY_CRUSADE = 2;
+    TZATZIKI_TSARDOM = 3;
+
+}
+
+message SetFraction {
+
+    Fraction fraction = 1;
+
+}
+
+message Challenge {
+
+    string challengeFor = 1;
+    string challengeFrom = 2;
+    GameMode gameMode = 3;
+    PickMode pickMode = 4;
+    FruitonTeam team = 5;
+
+}
+
+message ChallengeResult {
+
+    string challengeFrom = 1;
+    bool challengeAccepted = 2;
+    FruitonTeam team = 3;
+
+}
+
+message RevokeChallenge {
+
+    string challengeFrom = 1;
+
+}
+
+message DraftReady {
+
+    PlayerInfo opponent = 1;
+    bool startsFirst = 2; // whether player who received this message starts first
+
+}
+
+enum FruitonType {
+
+    KING = 0;
+    MAJOR = 1;
+    MINOR = 2;
+
+}
+
+message DraftRequest {
+
+    Position position = 1;
+    FruitonType fruitonType = 2;
+    int32 secondsToPick = 3;
+
+}
+
+message DraftResponse {
+
+    int32 fruitonId = 1;
+
+}
+
+message DraftResult {
+
+    string login = 1;
+    Position position = 2;
+    int32 fruitonId = 3;
+
+}
+
+message DraftSurrenderMessage {
+
+}
+
+message StateCorrection {
+
+    string gameState = 1;
+
+}
